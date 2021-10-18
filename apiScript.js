@@ -19,24 +19,152 @@
   let ropaData = await getDocs(ropa)
 
   
-  const get3Random=()=>{
-    let arrRopa=[]
+
+  let arrStyle=[]
+
+
+document.getElementById("urban").addEventListener("click", ()=>{
+  let arrRopa=[]
     ropaData.forEach((doc) => {
       arrRopa.push(doc.data())  
     })
-    console.log(arrRopa)
     let ropaFiltrada= arrRopa.filter((element)=>{
-      return element.style == "Clásico"
+      return element.style == "Urban"
     })
-    console.log(ropaFiltrada)
-    let ropaRandom=[]
-    for (let i = 0; i<3; i++){
-      ropaRandom.push(ropaFiltrada.splice(Math.floor(Math.random()* (ropaFiltrada.length - 1)) ,1))
-      
-    }
-    console.log(ropaRandom)
+    return arrStyle.push(ropaFiltrada)
+})
+
+
+document.getElementById("casual").addEventListener("click", ()=>{
+  let arrRopa=[]
+    ropaData.forEach((doc) => {
+      arrRopa.push(doc.data())  
+    })
+    let ropaFiltrada= arrRopa.filter((element)=>{
+      return element.style == "Casual"
+    })
+    return arrStyle.push(ropaFiltrada)
+})
+
+document.getElementById("punk").addEventListener("click", ()=>{
+  let arrRopa=[]
+    ropaData.forEach((doc) => {
+      arrRopa.push(doc.data())  
+    })
+    let ropaFiltrada= arrRopa.filter((element)=>{
+      return element.style == "Punk"
+    })
+    return arrStyle.push(ropaFiltrada)
+})
+
+document.getElementById("clasico").addEventListener("click", ()=>{
+  let arrRopa=[]
+    ropaData.forEach((doc) => {
+      arrRopa.push(doc.data())  
+    })
+    let ropaFiltrada= arrRopa.filter((element)=>{
+      return element.style == "Clasico"
+    })
+    return arrStyle.push(ropaFiltrada)
+})
+
+
+
+let arrBusqueda=[]
+document.getElementById("rojo").addEventListener("click", ()=>{
+    console.log(arrStyle)
+    let ropaFiltrada= arrStyle[0].filter((element)=>{
+      return element.color == "Rojo"
+    })
+    
+    return arrBusqueda.push(ropaFiltrada)
+})
+
+document.getElementById("amarillo").addEventListener("click", ()=>{
+  console.log(arrStyle)
+  let ropaFiltrada= arrStyle[0].filter((element)=>{
+    return element.color == "Amarillo"
+  })
+  
+  return arrBusqueda.push(ropaFiltrada)
+})
+
+document.getElementById("morado").addEventListener("click", ()=>{
+  console.log(arrStyle)
+  let ropaFiltrada= arrStyle[0].filter((element)=>{
+    return element.color == "Morado"
+  })
+  
+  return arrBusqueda.push(ropaFiltrada)
+})
+
+document.getElementById("verde").addEventListener("click", ()=>{
+  console.log(arrStyle)
+  let ropaFiltrada= arrStyle[0].filter((element)=>{
+    return element.color == "Verde"
+  })
+  
+  return arrBusqueda.push(ropaFiltrada)
+})
+
+document.getElementById("azul").addEventListener("click", ()=>{
+  console.log(arrStyle)
+  let ropaFiltrada= arrStyle[0].filter((element)=>{
+    return element.color == "Azul"
+  })
+  
+  return arrBusqueda.push(ropaFiltrada)
+})
+
+document.getElementById("search").addEventListener("click", ()=>{
+  let tresRandom=[]
+  for (let i = 0; i<3; i++){
+      tresRandom.push(arrBusqueda[0].splice(Math.floor(Math.random()* (arrBusqueda[0].length - 1)) ,1))
   }
-  get3Random()
+  // document.body.removeChild("root")
+
+// document.getElementById("root").removeChild("styles")
+// document.getElementById("root").removeChild("colors")
+// document.getElementById("root").removeChild("searchButton")
+console.log(tresRandom)
+document.getElementById("root").innerHTML=null
+document.getElementById("root").innerHTML= `<div id="resultados"></div>`
+for(let i=0;i<tresRandom.length;i++){
+  const [{type,color,style}] = tresRandom[i]
+  document.getElementById("resultados").innerHTML+= `
+  <div id="resultado${i+1}">
+  <h1>${type}</h1>
+  <p>${color}</p>
+  <p>${style}</p>
+  </div>`
+
+}})
+
+
+
+
+
+
+
+
+  // const get3Random=()=>{
+  //   let arrRopa=[]
+  //   ropaData.forEach((doc) => {
+  //     arrRopa.push(doc.data())  
+  //   })
+  //   console.log(arrRopa)
+  //   let ropaFiltrada= arrRopa.filter((element)=>{
+  //     return element.style == "Clásico"
+  //   })
+  //   console.log(ropaFiltrada)
+  //   let ropaRandom=[]
+  //   for (let i = 0; i<3; i++){
+  //     ropaRandom.push(ropaFiltrada.splice(Math.floor(Math.random()* (ropaFiltrada.length - 1)) ,1))
+      
+  //   }
+  //   console.log(ropaRandom)
+  // }
+  // get3Random()
   
   
   
