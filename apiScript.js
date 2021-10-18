@@ -20,20 +20,21 @@
 
   
 
+
+
+// Selection Style
+
   let arrStyle=[]
-
-
-document.getElementById("urban").addEventListener("click", ()=>{
-  let arrRopa=[]
+document.getElementById("urban").addEventListener("click", ()=>{  
+    let arrRopa=[]
     ropaData.forEach((doc) => {
       arrRopa.push(doc.data())  
     })
     let ropaFiltrada= arrRopa.filter((element)=>{
       return element.style == "Urban"
     })
-    return arrStyle.push(ropaFiltrada)
+    return arrStyle=ropaFiltrada
 })
-
 
 document.getElementById("casual").addEventListener("click", ()=>{
   let arrRopa=[]
@@ -43,7 +44,7 @@ document.getElementById("casual").addEventListener("click", ()=>{
     let ropaFiltrada= arrRopa.filter((element)=>{
       return element.style == "Casual"
     })
-    return arrStyle.push(ropaFiltrada)
+    return arrStyle=ropaFiltrada
 })
 
 document.getElementById("punk").addEventListener("click", ()=>{
@@ -54,7 +55,7 @@ document.getElementById("punk").addEventListener("click", ()=>{
     let ropaFiltrada= arrRopa.filter((element)=>{
       return element.style == "Punk"
     })
-    return arrStyle.push(ropaFiltrada)
+    return arrStyle=ropaFiltrada
 })
 
 document.getElementById("clasico").addEventListener("click", ()=>{
@@ -63,248 +64,137 @@ document.getElementById("clasico").addEventListener("click", ()=>{
       arrRopa.push(doc.data())  
     })
     let ropaFiltrada= arrRopa.filter((element)=>{
-      return element.style == "Clasico"
+      return element.style == "Clásico"
     })
-    return arrStyle.push(ropaFiltrada)
+    return arrStyle=ropaFiltrada
 })
 
-
+//Selección de Color
 
 let arrBusqueda=[]
 document.getElementById("rojo").addEventListener("click", ()=>{
-    console.log(arrStyle)
-    let ropaFiltrada= arrStyle[0].filter((element)=>{
+  if(arrStyle[0]==undefined){
+    return window.alert("Debe elegir un estilo primero")}
+    let ropaFiltrada= arrStyle.filter((element)=>{
       return element.color == "Rojo"
-    })
-    
-    return arrBusqueda.push(ropaFiltrada)
+    })    
+    return arrBusqueda=ropaFiltrada
 })
 
 document.getElementById("amarillo").addEventListener("click", ()=>{
-  console.log(arrStyle)
-  let ropaFiltrada= arrStyle[0].filter((element)=>{
+  if(arrStyle[0]==undefined){
+    return window.alert("Debe elegir un estilo primero")}
+  let ropaFiltrada= arrStyle.filter((element)=>{
     return element.color == "Amarillo"
-  })
-  
-  return arrBusqueda.push(ropaFiltrada)
+  })  
+  return arrBusqueda=ropaFiltrada
 })
 
 document.getElementById("morado").addEventListener("click", ()=>{
-  console.log(arrStyle)
-  let ropaFiltrada= arrStyle[0].filter((element)=>{
+  if(arrStyle[0]==undefined){
+    return window.alert("Debe elegir un estilo primero")}
+  let ropaFiltrada= arrStyle.filter((element)=>{
     return element.color == "Morado"
-  })
-  
-  return arrBusqueda.push(ropaFiltrada)
+  })  
+  return arrBusqueda=ropaFiltrada
 })
 
 document.getElementById("verde").addEventListener("click", ()=>{
-  console.log(arrStyle)
-  let ropaFiltrada= arrStyle[0].filter((element)=>{
+  if(arrStyle[0]==undefined){
+    return window.alert("Debe elegir un estilo primero")}
+  let ropaFiltrada= arrStyle.filter((element)=>{
     return element.color == "Verde"
-  })
-  
-  return arrBusqueda.push(ropaFiltrada)
+  })  
+  return arrBusqueda=ropaFiltrada
 })
 
 document.getElementById("azul").addEventListener("click", ()=>{
-  console.log(arrStyle)
-  let ropaFiltrada= arrStyle[0].filter((element)=>{
+  if(arrStyle[0]==undefined){
+    return window.alert("Debe elegir un estilo primero")}
+  let ropaFiltrada= arrStyle.filter((element)=>{
     return element.color == "Azul"
-  })
-  
-  return arrBusqueda.push(ropaFiltrada)
+  })  
+  return arrBusqueda=ropaFiltrada
 })
 
+//Busqueda de prendas style+color
+
 document.getElementById("search").addEventListener("click", ()=>{
-  let tresRandom=[]
-  for (let i = 0; i<3; i++){
-      tresRandom.push(arrBusqueda[0].splice(Math.floor(Math.random()* (arrBusqueda[0].length - 1)) ,1))
-  }
-  // document.body.removeChild("root")
+    if(arrStyle[0]==undefined){
+      return window.alert("Debe elegir un color para la búsqueda detallada")
+    }
+    let tresRandom=[]
+    for (let i = 0; i<3; i++){
+      tresRandom.push(arrBusqueda.splice(Math.floor(Math.random()* (arrBusqueda[0].length - 1)) ,1))
+    }
+    document.getElementById("root").innerHTML=null
+    document.getElementById("root").innerHTML= `<div id="resultados"></div>`
+    for(let i=0;i<tresRandom.length;i++){
+      const [{type,color,style}] = tresRandom[i]
+      document.getElementById("resultados").innerHTML+= `
+      <div id="resultado${i+1}">
+      <h1>${type}</h1>
+      <p>${color}</p>
+      <p>${style}</p>
+      </div>`
+    }
+    document.getElementById("root").innerHTML+=`
+      <div id="buyOptions">
+      <button type="button" id="buy">Comprar
+      </button>
+      <a id="newSearch" href="./form.html">Nueva Búsqueda
+      </a>
+      </div>`
+    document.getElementById("buy").addEventListener("click", ()=>{
+        document.getElementById("root").innerHTML=null
+        document.getElementById("root").innerHTML= `
+          <div>
+          <h2>Compra realizada con exito.</h2>
+          <p>Muchas gracias por comprar con nosotros, su pedido llegará en los próximos 10 días laborales</p>
+          </div>
+          <div>
+          <a id="newSearch" href="./form.html">Nueva Búsqueda
+          </a>
+          </div>`
+    })
+})
 
-// document.getElementById("root").removeChild("styles")
-// document.getElementById("root").removeChild("colors")
-// document.getElementById("root").removeChild("searchButton")
-console.log(tresRandom)
-document.getElementById("root").innerHTML=null
-document.getElementById("root").innerHTML= `<div id="resultados"></div>`
-for(let i=0;i<tresRandom.length;i++){
-  const [{type,color,style}] = tresRandom[i]
-  document.getElementById("resultados").innerHTML+= `
-  <div id="resultado${i+1}">
-  <h1>${type}</h1>
-  <p>${color}</p>
-  <p>${style}</p>
-  </div>`
-
-}})
-
-
-
-
-
-
-
-
-  // const get3Random=()=>{
-  //   let arrRopa=[]
-  //   ropaData.forEach((doc) => {
-  //     arrRopa.push(doc.data())  
-  //   })
-  //   console.log(arrRopa)
-  //   let ropaFiltrada= arrRopa.filter((element)=>{
-  //     return element.style == "Clásico"
-  //   })
-  //   console.log(ropaFiltrada)
-  //   let ropaRandom=[]
-  //   for (let i = 0; i<3; i++){
-  //     ropaRandom.push(ropaFiltrada.splice(Math.floor(Math.random()* (ropaFiltrada.length - 1)) ,1))
-      
-  //   }
-  //   console.log(ropaRandom)
-  // }
-  // get3Random()
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  // await addDoc(collection(dataFire, "ropa"),{
-  //   type: "Zapatos",
-  //   color: "Rojo",
-  //   style: "Urban",
-  // });
-
-  //  await addDoc(collection(dataFire, "ropa"),{
-  //   type: "Zapatos",
-  //   color: "Verde",
-  //   style: "Urban",
-  // });
-  // await addDoc(collection(dataFire, "ropa"),{
-  //     type: "Zapatos",
-  //     color: "Amarillo",
-  //     style: "Urban",
-  //   });
-  //   await addDoc(collection(dataFire, "ropa"),{
-  //       type: "Zapatos",
-  //       color: "Azul",
-  //       style: "Urban",
-  //     });
-  //   await addDoc(collection(dataFire, "ropa"),{
-  //   type: "Zapatos",
-  //   color: "Morado",
-  //   style: "Urban",
-  // });
-
-  // await addDoc(collection(dataFire, "ropa"),{
-  //   type: "Zapatos",
-  //   color: "Rojo",
-  //   style: "Clásico",
-  // });
-
-  //  await addDoc(collection(dataFire, "ropa"),{
-  //   type: "Zapatos",
-  //   color: "Verde",
-  //   style: "Clásico",
-  // });
-  // await addDoc(collection(dataFire, "ropa"),{
-  //     type: "Zapatos",
-  //     color: "Amarillo",
-  //     style: "Clásico",
-  //   });
-  //   await addDoc(collection(dataFire, "ropa"),{
-  //       type: "Zapatos",
-  //       color: "Azul",
-  //       style: "Clásico",
-  //     });
-  //   await addDoc(collection(dataFire, "ropa"),{
-  //   type: "Zapatos",
-  //   color: "Morado",
-  //   style: "Clásico",
-  // });
-
-
-
-  // await addDoc(collection(dataFire, "ropa"),{
-  //   type: "Zapatos",
-  //   color: "Rojo",
-  //   style: "Punk",
-  // });
-
-  //  await addDoc(collection(dataFire, "ropa"),{
-  //   type: "Zapatos",
-  //   color: "Verde",
-  //   style: "Punk",
-  // });
-  // await addDoc(collection(dataFire, "ropa"),{
-  //     type: "Zapatos",
-  //     color: "Amarillo",
-  //     style: "Punk",
-  //   });
-  //   await addDoc(collection(dataFire, "ropa"),{
-  //       type: "Zapatos",
-  //       color: "Azul",
-  //       style: "Punk",
-  //     });
-  //   await addDoc(collection(dataFire, "ropa"),{
-  //   type: "Zapatos",
-  //   color: "Morado",
-  //   style: "Punk",
-  // });
-
-
-  // await addDoc(collection(dataFire, "ropa"),{
-  //   type: "Zapatos",
-  //   color: "Rojo",
-  //   style: "Casual",
-  // });
-
-  //  await addDoc(collection(dataFire, "ropa"),{
-  //   type: "Zapatos",
-  //   color: "Verde",
-  //   style: "Casual",
-  // });
-  // await addDoc(collection(dataFire, "ropa"),{
-  //     type: "Zapatos",
-  //     color: "Amarillo",
-  //     style: "Casual",
-  //   });
-  //   await addDoc(collection(dataFire, "ropa"),{
-  //       type: "Zapatos",
-  //       color: "Azul",
-  //       style: "Casual",
-  //     });
-  //   await addDoc(collection(dataFire, "ropa"),{
-  //   type: "Zapatos",
-  //   color: "Morado",
-  //   style: "Casual",
-  // });
-
+document.getElementById("randomColor").addEventListener("click", ()=>{
+    if(arrStyle[0]==undefined){
+     return window.alert("Debe elegir un estilo para la búsqueda")
+    }  
+    let arrRopa=[]
+    for (let i = 0; i<3; i++){
+      arrRopa.push(arrStyle.splice(Math.floor(Math.random()* (arrStyle.length - 1)) ,1))
+    }
+    document.getElementById("root").innerHTML=null
+    document.getElementById("root").innerHTML= `<div id="resultados"></div>`
+    for(let i=0;i<arrRopa.length;i++){
+      const [{type,color,style}] = arrRopa[i]
+      document.getElementById("resultados").innerHTML+= `
+        <div id="resultado${i+1}">
+        <h1>${type}</h1>
+        <p>${color}</p>
+        <p>${style}</p>
+        </div>`
+    }
+    document.getElementById("root").innerHTML+=`
+      <div id="buyOptions">
+      <button type="button" id="buy">Comprar
+      </button>
+      <a id="newSearch" href="./form.html">Nueva Búsqueda
+      </a>
+      </div>`
+    document.getElementById("buy").addEventListener("click", ()=>{
+      document.getElementById("root").innerHTML=null
+      document.getElementById("root").innerHTML= `
+      <div>
+      <h2>Compra realizada con exito.</h2>
+      <p>Muchas gracias por comprar con nosotros, su pedido llegará en los próximos 10 días laborales</p>
+      </div>
+      <div>
+      <a id="newSearch" href="./form.html">Nueva Búsqueda
+      </a>
+      </div>`
+    })
+})
