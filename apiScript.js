@@ -32,6 +32,7 @@
     let ropaRandom=[]
     for (let i = 0; i<3; i++){
       ropaRandom.push(ropaFiltrada.splice(Math.floor(Math.random()* (ropaFiltrada.length - 1)) ,1))
+      
     }
     console.log(ropaRandom)
   }
