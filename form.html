@@ -14,82 +14,84 @@
     </head>
     <body>
         <header>
+            <div class="logo">
+                <img src="./img/logo.jpg" alt="" class="logo__img" />
+            </div>
             <nav class="menu">
-            <ul>
-              <li><a href="./index.html">Home</a></li>
-              <li><a href="./form.html">Estilos</a></li>
-              
-            </ul>
-          </nav>
+                <ul>
+                    <a href="./index.html"><li class="links">Home</li></a>
+                    <a href="./form.html"><li class="links">Estilos</li></a>
+                </ul>
+            </nav>
         </header>
         <article id="root">
-        <section class="container" id="styles">
-            <h2 class="title">Elije el estilo que más te guste</h2>
-            <div class="btns__container">
-                <div class="style">
-                    <a href="#" class="styles__link" id="urban"
-                    ><img
-                    src="./img/default.jpg"
-                    alt=""
-                    class="styles__img"
-                    /></a>
-                    <p class="style__text">Urban</p>
+            <section class="container" id="styles">
+                <h2 class="title">Elije el estilo que más te guste</h2>
+                <div class="btns__container">
+                    <div class="style">
+                        <a href="#" class="styles__link" id="urban"
+                            ><img
+                                src="./img/default.jpg"
+                                alt=""
+                                class="styles__img"
+                        /></a>
+                        <p class="style__text">Urban</p>
+                    </div>
+                    <div class="style">
+                        <a href="#" class="styles__link" id="casual"
+                            ><img
+                                src="./img/default.jpg"
+                                alt=""
+                                class="styles__img"
+                        /></a>
+                        <p class="style__text">Casual</p>
+                    </div>
+                    <div class="style">
+                        <a href="#" class="styles__link" id="clasico"
+                            ><img
+                                src="./img/default.jpg"
+                                alt=""
+                                class="styles__img"
+                        /></a>
+                        <p class="style__text">Clásico</p>
+                    </div>
+                    <div class="style">
+                        <a href="#" class="styles__link" id="punk"
+                            ><img
+                                src="./img/default.jpg"
+                                alt=""
+                                class="styles__img"
+                        /></a>
+                        <p class="style__text">Punk</p>
+                    </div>
                 </div>
-                <div class="style">
-                    <a href="#" class="styles__link" id="casual"
-                    ><img
-                    src="./img/default.jpg"
-                    alt=""
-                    class="styles__img"
-                    /></a>
-                    <p class="style__text">Casual</p>
+            </section>
+            <section class="container2" id="colors">
+                <h2 class="title title--colors">Elije tu color favorito</h2>
+                <div class="colors__container">
+                    <div class="colors__btn tooltip bottom" id="rojo">
+                        <span class="tiptext">Rojo</span>
+                    </div>
+                    <div class="colors__btn tooltip bottom" id="azul">
+                        <span class="tiptext">Azul</span>
+                    </div>
+                    <div class="colors__btn tooltip bottom" id="verde">
+                        <span class="tiptext">Verde</span>
+                    </div>
+                    <div class="colors__btn tooltip bottom" id="morado">
+                        <span class="tiptext">Morado</span>
+                    </div>
+                    <div class="colors__btn tooltip bottom" id="amarillo">
+                        <span class="tiptext">Amarillo</span>
+                    </div>
+                    <div class="colors__btn tooltip bottom" id="randomColor">
+                        <span class="tiptext">Color aleatorio</span>
+                    </div>
                 </div>
-                <div class="style">
-                    <a href="#" class="styles__link" id="clasico"
-                    ><img
-                    src="./img/default.jpg"
-                    alt=""
-                    class="styles__img"
-                    /></a>
-                    <p class="style__text">Clásico</p>
-                </div>
-                <div class="style">
-                    <a href="#" class="styles__link" id="punk"
-                    ><img
-                    src="./img/default.jpg"
-                    alt=""
-                    class="styles__img"
-                    /></a>
-                    <p class="style__text">Punk</p>
-                </div>
-            </div>
-        </section>
-        <section class="container" id="colors">
-            <h2 class="title">Elije tu color favorito</h2>
-            <div class="colors__container">
-                <div class="colors__btn" id="rojo"></div>
-                <div class="colors__btn" id="azul"></div>
-                <div class="colors__btn" id="verde"></div>
-                <div class="colors__btn" id="morado"></div>
-                <div class="colors__btn" id="amarillo"></div>
-            </div>
-            <a href="#" class="random__color" id="randomColor">Cualquier color</a>
-        </section>
-        
-      <div id="searchButton">  <button type="button" id="search">BUSCAR</button> </div>        
-    </article>
-
-
-
-
-
-
-
-
-
-
+                <a href="" class="search" id="search">Obtener mis prendas</a>
+            </section>
+        </article>
 
         <script src="./apiScript.js" type="module"></script>
     </body>
-    </html>
-    
+</html>

@@ -1,40 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Moda Click</title>
-    <link rel="shortcut icon" type="image/jpg" href="/img/icons8-hanger-50.png"/>
-    <link rel="stylesheet" href="./css/normalize.css">
-    <link rel="stylesheet" href="./css/style.css">
-    
-</head>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Moda Click</title>
+        <link
+            rel="shortcut icon"
+            type="image/jpg"
+            href="/img/icons8-hanger-50.png"
+        />
+        <link href="https://emoji-css.afeld.me/emoji.css" rel="stylesheet" />
+        <link rel="stylesheet" href="./css/normalize.css" />
+        <link rel="stylesheet" href="./css/style.css" />
+    </head>
 
+    <body>
+        <!-- ------------------ HEADER SECTION ------------------ -->
+        <header>
+            <div class="logo">
+                <img src="./img/logo.jpg" alt="" class="logo__img" />
+            </div>
+            <nav class="menu">
+                <ul>
+                    <a href="#"><li class="links">Home</li></a>
+                    <a href="./form.html"><li class="links">Estilos</li></a>
+                </ul>
+            </nav>
+        </header>
 
-<body>
-  <header>
-    <nav class="menu">
-    <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="./form.html">Estilos</a></li>
-      
-    </ul>
-  </nav>
-  </header>
-   <section>
-       <div class="img">
-           <img src="./img/fotochica.jpg" alt="foto-modelo">
-       </div>
+        <!-- ------------------ HERO SECTION ------------------ -->
+        <section class="flex__container">
+            <div class="img"></div>
+            <div class="text">
+                <h1 class="main__title">Moda Click</h1>
+                <h2 class="home__text">" Estilo creado para ti"</h2>
+                <p class="home__description">
+                    Recibe 3 prendas aleatorias que hemos escogido para ti según
+                    tus gustos
+                </p>
+                <a href="./form.html" class="home__button">Obtén tus prendas</a>
+            </div>
+        </section>
 
-       <div class="text">
-            <h2>" Estilo creado para ti"</h2>
-            <h3> Recibe 5 prendas que hemos escogido para ti</h3>
-       </div>
+        <!-- ------------------ HOW IT WORKS SECTION ------------------ -->
+        <section class="works__container">
+            <h2 class="works__title">¿Cómo funciona?</h2>
+            <p class="works__text">
+                Elige el estilo que más te guste y a continuación tu color
+                favorito
+            </p>
+            <p class="works__subtext">¡Nosotros nos encargamos del resto!</p>
+            <a href="./form.html" class="home__button home__button--mod"
+                >Obtén tus prendas</a
+            >
+        </section>
 
-   </section>
-
-
-    
-</body>
+        <!-- ------------------ FOOTER SECTION ------------------ -->
+        <footer class="footer">
+            <p class="footer__text">
+                Hecho con
+                <i
+                    class="em em-heart"
+                    aria-role="presentation"
+                    aria-label="HEAVY BLACK HEART"
+                ></i>
+                por Michelle, Guille y Ricky
+            </p>
+            <p class="copy">Todos los Derechos Reservados</p>
+        </footer>
+    </body>
 </html>
