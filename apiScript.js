@@ -124,6 +124,51 @@ document.getElementById('azul').addEventListener('click', () => {
     return (arrBusqueda = ropaFiltrada);
 });
 
+document.getElementById('randomColor').addEventListener('click', () => {
+    if (arrStyle[0] == undefined) {
+        return window.alert('Debes elegir un estilo primero');
+    }
+    let arrRopa = [];
+    for (let i = 0; i < 3; i++) {
+        arrRopa.push(
+            arrStyle.splice(
+                Math.floor(Math.random() * (arrStyle.length - 1)),
+                1
+            )
+        );
+    }
+    document.getElementById('root').innerHTML = null;
+    document.getElementById('root').innerHTML = `<div id="resultados"></div>`;
+    for (let i = 0; i < arrRopa.length; i++) {
+        const [{ type, color, style }] = arrRopa[i];
+        document.getElementById('resultados').innerHTML += `
+      <div id="resultado${i + 1}">
+      <h1>${type}</h1>
+      <p>${color}</p>
+      <p>${style}</p>
+      </div>`;
+    }
+    document.getElementById('root').innerHTML += `
+    <div id="buyOptions">
+    <button type="button" id="buy">Comprar
+    </button>
+    <a id="newSearch" href="./form.html">Nueva Búsqueda
+    </a>
+    </div>`;
+    document.getElementById('buy').addEventListener('click', () => {
+        document.getElementById('root').innerHTML = null;
+        document.getElementById('root').innerHTML = `
+    <div>
+    <h2>Compra realizada con exito.</h2>
+    <p>Muchas gracias por comprar con nosotros, su pedido llegará en los próximos 10 días laborales</p>
+    </div>
+    <div>
+    <a id="newSearch" href="./form.html">Nueva Búsqueda
+    </a>
+    </div>`;
+    });
+});
+
 //Busqueda de prendas style+color
 
 document.getElementById('search').addEventListener('click', () => {
@@ -168,50 +213,5 @@ document.getElementById('search').addEventListener('click', () => {
         <a id="newSearch" href="./form.html">Nueva Búsqueda
         </a>
         </div>`;
-    });
-});
-
-document.getElementById('randomColor').addEventListener('click', () => {
-    if (arrStyle[0] == undefined) {
-        return window.alert('Debes elegir un estilo primero');
-    }
-    let arrRopa = [];
-    for (let i = 0; i < 3; i++) {
-        arrRopa.push(
-            arrStyle.splice(
-                Math.floor(Math.random() * (arrStyle.length - 1)),
-                1
-            )
-        );
-    }
-    document.getElementById('root').innerHTML = null;
-    document.getElementById('root').innerHTML = `<div id="resultados"></div>`;
-    for (let i = 0; i < arrRopa.length; i++) {
-        const [{ type, color, style }] = arrRopa[i];
-        document.getElementById('resultados').innerHTML += `
-      <div id="resultado${i + 1}">
-      <h1>${type}</h1>
-      <p>${color}</p>
-      <p>${style}</p>
-      </div>`;
-    }
-    document.getElementById('root').innerHTML += `
-    <div id="buyOptions">
-    <button type="button" id="buy">Comprar
-    </button>
-    <a id="newSearch" href="./form.html">Nueva Búsqueda
-    </a>
-    </div>`;
-    document.getElementById('buy').addEventListener('click', () => {
-        document.getElementById('root').innerHTML = null;
-        document.getElementById('root').innerHTML = `
-    <div>
-    <h2>Compra realizada con exito.</h2>
-    <p>Muchas gracias por comprar con nosotros, su pedido llegará en los próximos 10 días laborales</p>
-    </div>
-    <div>
-    <a id="newSearch" href="./form.html">Nueva Búsqueda
-    </a>
-    </div>`;
     });
 });
