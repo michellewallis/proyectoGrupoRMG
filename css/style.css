@@ -1,5 +1,5 @@
 /*-------------------- GOOGLE FONTS --------------------*/
-@import url('https://fonts.googleapis.com/css2?family=Cormorant:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;700&family=Montserrat&display=swap');
 
 /*-------------------- COLOR VARIABLES --------------------*/
 :root {
@@ -15,7 +15,7 @@ html {
 }
 
 body {
-    font-family: 'Cormorant', serif;
+    font-family: 'Cormorant Garamond', serif;
 }
 
 a {
@@ -41,14 +41,15 @@ ul {
 
 .links {
     color: var(--oscuro);
-    font-weight: bold;
-    font-size: 1.4rem;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
     list-style: none;
     text-decoration: none;
     padding-right: 7rem;
 }
 
 .logo__img {
+    padding-left: 1rem;
     width: 40%;
 }
 
@@ -105,15 +106,6 @@ ul {
     width: 9rem;
 }
 
-.footer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 10rem;
-    background-color: var(--rosa);
-}
-
 /*-------------------- HOW IT WORKS STYLES --------------------*/
 .works__container {
     text-align: center;
@@ -133,10 +125,18 @@ ul {
 }
 
 /*-------------------- FORM STYLES --------------------*/
+.img_iconoropa {
+    width: 8%;
+}
+
 .title {
     color: var(--oscuro);
     font-size: 2rem;
     text-align: center;
+}
+
+.title--colors {
+    padding-top: 3rem;
 }
 
 .container {
@@ -159,6 +159,10 @@ ul {
 
 .styles__img {
     width: 100%;
+}
+
+#urban__img {
+    width: 105%;
 }
 
 .styles__link {
@@ -211,11 +215,22 @@ ul {
 }
 
 #morado {
-    background-color: #577590;
+    background-color: #5b5790;
 }
 
 #amarillo {
     background-color: #f9c74f;
+}
+
+#randomColor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fas {
+    color: var(--oscuro);
+    font-size: 3rem;
 }
 
 .tooltip {
@@ -292,4 +307,74 @@ ul {
 
 .resultados__text {
     font-size: 1.5rem;
+}
+
+.resultados_container {
+    cursor: pointer;
+    border-radius: 10px;
+    box-shadow: 0px 0px 8px -1px rgba(0, 0, 0, 0.32);
+    margin: 0 4rem;
+    padding-top: 1.5rem;
+    transition: all 0.15s;
+}
+
+.resultados_container:hover {
+    background-color: var(--rosa);
+}
+
+#buyOptions {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.compra__container {
+    font-size: 1.5rem;
+    text-align: center;
+    padding-top: 8rem;
+}
+
+.buy__btn {
+    color: var(--oscuro);
+    background-color: var(--rosa);
+    font-size: 1.3rem;
+    font-weight: bold;
+    padding: 2rem 4rem;
+    margin: 5rem 0 8rem;
+    transition: all 0.15s;
+}
+
+.buy__btn:hover {
+    color: white;
+    background-color: var(--marron);
+}
+
+.nueva__btn {
+    color: var(--oscuro);
+    background-color: var(--rosa);
+    font-size: 1.3rem;
+    font-weight: bold;
+    padding: 2rem 4rem;
+    margin: 5rem auto 10rem;
+    width: 9rem;
+    transition: all 0.15s;
+}
+
+.nueva__btn:hover {
+    color: white;
+    background-color: var(--marron);
+}
+
+/*-------------------- FOOTER SECCION --------------------*/
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 10rem;
+    background-color: var(--rosa);
+}
+
+.footer__text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
 }

@@ -129,7 +129,6 @@ document.getElementById('randomColor').addEventListener('click', () => {
         return window.alert('Debes elegir un estilo primero');
     }
     return (arrBusqueda = arrStyle);
-   
 });
 
 //Busqueda de prendas style+color
@@ -150,32 +149,33 @@ document.getElementById('search').addEventListener('click', () => {
     document.getElementById('root').innerHTML = null;
     document.getElementById('root').innerHTML = `<div id="resultados"></div>`;
     for (let i = 0; i < tresRandom.length; i++) {
-        const [{ type, color, style }] = tresRandom[i];
+        const [{ type, color, style, img }] = tresRandom[i];
         document.getElementById('resultados').innerHTML += `
-    <div id="resultado${i + 1}">
+    <div id="resultado${i + 1}" class="resultados_container">
+        <img src="${img}" alt="icono ropa" class="img_iconoropa">
         <h2 class="resultados__title">${type}</h2>
         <p class="resultados__text">${color}</p>
         <p class="resultados__text">${style}</p>
     </div>`;
     }
     document.getElementById('root').innerHTML += `
-    <div id="buyOptions">      
-        <a id="buy" href="#">
-            Comprar
-        </a>
-        <a id="newSearch" href="./form.html">
+    <div id="buyOptions">
+        <a id="newSearch" href="./form.html" class="buy__btn">
             Nueva Búsqueda
+        </a>      
+        <a id="buy" href="#" class="buy__btn">
+            Comprar
         </a>
     </div>`;
     document.getElementById('buy').addEventListener('click', () => {
         document.getElementById('root').innerHTML = null;
         document.getElementById('root').innerHTML = `
-        <div>
+        <div class="compra__container">
             <h2>Compra realizada con exito.</h2>
             <p>Muchas gracias por comprar con nosotros, su pedido llegará en los próximos 10 días laborales</p>
         </div>
         <div>
-            <a id="newSearch" href="./form.html">Nueva Búsqueda
+            <a id="newSearch" href="./form.html"  class="nueva__btn">Nueva Búsqueda 
             </a>
         </div>`;
     });
