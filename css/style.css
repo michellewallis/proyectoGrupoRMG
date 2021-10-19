@@ -10,6 +10,10 @@
 }
 
 /*-------------------- GLOBAL STYLES --------------------*/
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Cormorant', serif;
 }
@@ -127,6 +131,7 @@ ul {
 .works__subtext {
     font-size: 2.2rem;
 }
+
 /*-------------------- FORM STYLES --------------------*/
 .title {
     color: var(--oscuro);
@@ -271,4 +276,20 @@ ul {
 
 .search:hover {
     background-color: var(--rosa);
+}
+
+/*-------------------- RESULTS STYLES --------------------*/
+#resultados {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    text-align: center;
+    margin-top: 10rem;
+}
+
+.resultados__title {
+    font-size: 2.5rem;
+}
+
+.resultados__text {
+    font-size: 1.5rem;
 }
