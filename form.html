@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Moda Click</title>
+        <link
+            rel="shortcut icon"
+            href="https://img.icons8.com/ios-glyphs/30/000000/hanger.png"
+            type="image/x-icon"
+        />
+        <link href="https://emoji-css.afeld.me/emoji.css" rel="stylesheet" />
+        <link rel="stylesheet" href="./css/normalize.css" />
+        <link rel="stylesheet" href="./css/style.css" />
+        <script
+            src="https://kit.fontawesome.com/5a088c105a.js"
+            crossorigin="anonymous"
+        ></script>
+    </head>
+    <body>
+        <!-- ------------------ HEADER ------------------ -->
+        <header>
+            <a href="./index.html"
+                ><img src="./img/logo_final.png" alt="" class="logo__img"
+            /></a>
+            <nav class="menu">
+                <ul>
+                    <a href="./index.html"><li class="links">Home</li></a>
+                    <a href="./form.html"><li class="links">Estilos</li></a>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- ------------------ MAIN SECTION ------------------ -->
+        <article id="root">
+            <section class="container" id="styles">
+                <h2 class="title">Elije el estilo que más te guste</h2>
+                <div class="btns__container">
+                    <div class="style">
+                        <a href="#colors" class="styles__link" id="urban"
+                            ><img
+                                src="./img/urbano.jpg"
+                                alt=""
+                                class="styles__img"
+                                id="urban__img"
+                        /></a>
+                        <p class="style__text">Urban</p>
+                    </div>
+                    <div class="style">
+                        <a href="#colors" class="styles__link" id="casual"
+                            ><img
+                                src="./img/casual.jpg"
+                                alt=""
+                                class="styles__img"
+                        /></a>
+                        <p class="style__text">Casual</p>
+                    </div>
+                    <div class="style">
+                        <a href="#colors" class="styles__link" id="clasico"
+                            ><img
+                                src="./img/clasica.jpg"
+                                alt=""
+                                class="styles__img"
+                        /></a>
+                        <p class="style__text">Clásico</p>
+                    </div>
+                    <div class="style">
+                        <a href="#colors" class="styles__link" id="punk"
+                            ><img
+                                src="./img/punk.jpg"
+                                alt=""
+                                class="styles__img"
+                        /></a>
+                        <p class="style__text">Punk</p>
+                    </div>
+                </div>
+            </section>
+            <section class="container2" id="colors">
+                <h2 class="title title--colors">Elije tu color favorito</h2>
+                <div class="colors__container">
+                    <div class="colors__btn tooltip bottom" id="rojo">
+                        <span class="tiptext">Rojo</span>
+                    </div>
+                    <div class="colors__btn tooltip bottom" id="azul">
+                        <span class="tiptext">Azul</span>
+                    </div>
+                    <div class="colors__btn tooltip bottom" id="verde">
+                        <span class="tiptext">Verde</span>
+                    </div>
+                    <div class="colors__btn tooltip bottom" id="morado">
+                        <span class="tiptext">Morado</span>
+                    </div>
+                    <div class="colors__btn tooltip bottom" id="amarillo">
+                        <span class="tiptext">Amarillo</span>
+                    </div>
+                    <div class="colors__btn tooltip bottom" id="randomColor">
+                        <i class="fas fa-sync-alt"></i>
+                        <span class="tiptext">Color aleatorio</span>
+                    </div>
+                </div>
+                <a href="#" class="search" id="search">Obtener mis prendas</a>
+            </section>
+        </article>
+
+        <!-- ------------------ FOOTER SECTION ------------------ -->
+        <footer class="footer">
+            <p class="footer__text">
+                Hecho con
+                <i
+                    class="em em-heart"
+                    aria-role="presentation"
+                    aria-label="HEAVY BLACK HEART"
+                ></i>
+                por Michelle, Guille y Ricky
+            </p>
+            <p class="footer__text">Todos los Derechos Reservados</p>
+        </footer>
+
+        <!-- ------------------ SCRIPTS ------------------ -->
+        <script src="./apiScript.js" type="module"></script>
+    </body>
+</html>

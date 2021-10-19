@@ -1,0 +1,381 @@
+/*-------------------- GOOGLE FONTS --------------------*/
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;700&family=Montserrat&display=swap');
+
+/*-------------------- COLOR VARIABLES --------------------*/
+:root {
+    --marron: #827081;
+    --rosa: #e3d0d8;
+    --lila: #e7e6f7;
+    --oscuro: rgb(53, 53, 53);
+}
+
+/*-------------------- GLOBAL STYLES --------------------*/
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Cormorant Garamond', serif;
+}
+
+a {
+    display: block;
+    text-decoration: none;
+}
+
+/*-------------------- INDEX STLYLES --------------------*/
+header {
+    position: sticky;
+    top: 0;
+    background-color: var(--rosa);
+    box-shadow: 0px 0px 7px -2px rgba(0, 0, 0, 0.43);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+}
+
+ul {
+    display: flex;
+}
+
+.links {
+    color: var(--oscuro);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    list-style: none;
+    text-decoration: none;
+    padding-right: 7rem;
+}
+
+.logo__img {
+    padding-left: 1rem;
+    width: 40%;
+}
+
+.flex__container {
+    display: flex;
+    height: 100vh;
+}
+
+.img {
+    background-image: url(../img/fotochica.jpg);
+    background-position: top;
+    background-size: cover;
+    width: 50vw;
+}
+
+.text {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main__title {
+    font-size: 4rem;
+    padding-top: 5rem;
+}
+
+.home__text {
+    font-size: 3rem;
+    font-weight: bold;
+    padding-top: 2rem;
+}
+
+.home__description {
+    font-size: 1.4rem;
+}
+
+.home__button {
+    color: var(--oscuro);
+    font-size: 1.2rem;
+    font-weight: bold;
+    background-color: var(--rosa);
+    padding: 2rem;
+    margin-top: 3rem;
+    transition: all 0.15s;
+}
+
+.home__button:hover {
+    color: white;
+    background-color: var(--marron);
+}
+
+.home__button--mod {
+    margin: 0 auto 20rem;
+    width: 9rem;
+}
+
+/*-------------------- HOW IT WORKS STYLES --------------------*/
+.works__container {
+    text-align: center;
+}
+
+.works__title {
+    font-size: 3.5rem;
+    margin-top: 8rem;
+}
+
+.works__text {
+    font-size: 1.8rem;
+}
+
+.works__subtext {
+    font-size: 2.2rem;
+}
+
+/*-------------------- FORM STYLES --------------------*/
+.img_iconoropa {
+    width: 8%;
+}
+
+.title {
+    color: var(--oscuro);
+    font-size: 2rem;
+    text-align: center;
+}
+
+.title--colors {
+    padding-top: 3rem;
+}
+
+.container {
+    height: 100vh;
+}
+
+.container2 {
+    height: 70vh;
+}
+
+.btns__container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 0 3rem 0 3rem;
+}
+
+.style {
+    padding: 2rem;
+}
+
+.styles__img {
+    width: 100%;
+}
+
+#urban__img {
+    width: 105%;
+}
+
+.styles__link {
+    text-align: center;
+    transition: all 0.15s;
+}
+
+.styles__link:hover {
+    opacity: 0.5;
+}
+
+.styles__link:active {
+    background-color: var(--marron);
+}
+
+.style__text {
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.colors__container {
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 4rem;
+}
+
+.colors__btn {
+    cursor: pointer;
+    border-radius: 50%;
+    box-shadow: 0px 0px 12px -2px rgba(0, 0, 0, 0.24);
+    width: 120px;
+    height: 120px;
+    transition: 0.15s all;
+}
+
+.colors__btn:hover {
+    transform: scale(1.1);
+}
+
+#rojo {
+    background-color: #f94144;
+}
+
+#azul {
+    background-color: #277da1;
+}
+
+#verde {
+    background-color: #43aa8b;
+}
+
+#morado {
+    background-color: #5b5790;
+}
+
+#amarillo {
+    background-color: #f9c74f;
+}
+
+#randomColor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fas {
+    color: var(--oscuro);
+    font-size: 3rem;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tiptext {
+    background-color: var(--rosa);
+    border-radius: 3px;
+    color: var(--oscuro);
+    font-weight: bold;
+    text-align: center;
+    padding: 6px 0;
+    position: absolute;
+    width: 120px;
+    visibility: hidden;
+    z-index: 1;
+}
+
+.tooltip .tiptext::after {
+    content: '';
+    position: absolute;
+    border-width: 5px;
+    border-style: solid;
+}
+
+.tooltip:hover .tiptext {
+    visibility: visible;
+}
+
+.tooltip.bottom .tiptext {
+    margin-left: -60px;
+    top: 110%;
+    left: 50%;
+}
+
+.tooltip.bottom .tiptext::after {
+    margin-left: -5px;
+    bottom: 100%;
+    left: 50%;
+    border-color: transparent transparent var(--rosa) transparent;
+}
+
+.search {
+    border: 2px solid var(--rosa);
+    color: var(--oscuro);
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin: 0 auto;
+    padding: 2rem 4rem;
+    text-align: center;
+    text-decoration: none;
+    margin-top: 7rem;
+    width: 15rem;
+    transition: all 0.15s;
+}
+
+.search:hover {
+    background-color: var(--rosa);
+}
+
+/*-------------------- RESULTS STYLES --------------------*/
+#resultados {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    text-align: center;
+    margin-top: 10rem;
+}
+
+.resultados__title {
+    font-size: 2.5rem;
+}
+
+.resultados__text {
+    font-size: 1.5rem;
+}
+
+.resultados_container {
+    cursor: pointer;
+    border-radius: 10px;
+    box-shadow: 0px 0px 8px -1px rgba(0, 0, 0, 0.32);
+    margin: 0 4rem;
+    padding-top: 1.5rem;
+    transition: all 0.15s;
+}
+
+.resultados_container:hover {
+    background-color: var(--rosa);
+}
+
+#buyOptions {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.compra__container {
+    font-size: 1.5rem;
+    text-align: center;
+    padding-top: 8rem;
+}
+
+.buy__btn {
+    color: var(--oscuro);
+    background-color: var(--rosa);
+    font-size: 1.3rem;
+    font-weight: bold;
+    padding: 2rem 4rem;
+    margin: 5rem 0 8rem;
+    transition: all 0.15s;
+}
+
+.buy__btn:hover {
+    color: white;
+    background-color: var(--marron);
+}
+
+.nueva__btn {
+    color: var(--oscuro);
+    background-color: var(--rosa);
+    font-size: 1.3rem;
+    font-weight: bold;
+    padding: 2rem 4rem;
+    margin: 5rem auto 10rem;
+    width: 9rem;
+    transition: all 0.15s;
+}
+
+.nueva__btn:hover {
+    color: white;
+    background-color: var(--marron);
+}
+
+/*-------------------- FOOTER SECCION --------------------*/
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 10rem;
+    background-color: var(--rosa);
+}
+
+.footer__text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+}
