@@ -4,7 +4,13 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
+        <title>Moda Click</title>
+        <link
+            hrel="shortcut icon"
+            type="image/jpg"
+            href="/img/icons8-hanger-50.png"
+        />
+        <link href="https://emoji-css.afeld.me/emoji.css" rel="stylesheet" />
         <link rel="stylesheet" href="./css/normalize.css" />
         <link rel="stylesheet" href="./css/style.css" />
         <script
@@ -13,10 +19,11 @@
         ></script>
     </head>
     <body>
+        <!-- ------------------ HEADER ------------------ -->
         <header>
-            <div class="logo">
-                <img src="./img/logo.jpg" alt="" class="logo__img" />
-            </div>
+            <a href="./index.html"
+                ><img src="./img/logo_final.png" alt="" class="logo__img"
+            /></a>
             <nav class="menu">
                 <ul>
                     <a href="./index.html"><li class="links">Home</li></a>
@@ -24,6 +31,8 @@
                 </ul>
             </nav>
         </header>
+
+        <!-- ------------------ MAIN SECTION ------------------ -->
         <article id="root">
             <section class="container" id="styles">
                 <h2 class="title">Elije el estilo que más te guste</h2>
@@ -34,6 +43,7 @@
                                 src="./img/urbano.jpg"
                                 alt=""
                                 class="styles__img"
+                                id="urban__img"
                         /></a>
                         <p class="style__text">Urban</p>
                     </div>
@@ -85,6 +95,7 @@
                         <span class="tiptext">Amarillo</span>
                     </div>
                     <div class="colors__btn tooltip bottom" id="randomColor">
+                        <i class="fas fa-sync-alt"></i>
                         <span class="tiptext">Color aleatorio</span>
                     </div>
                 </div>
@@ -92,6 +103,21 @@
             </section>
         </article>
 
+        <!-- ------------------ FOOTER SECTION ------------------ -->
+        <footer class="footer">
+            <p class="footer__text">
+                Hecho con
+                <i
+                    class="em em-heart"
+                    aria-role="presentation"
+                    aria-label="HEAVY BLACK HEART"
+                ></i>
+                por Michelle, Guille y Ricky
+            </p>
+            <p class="footer__text">Todos los Derechos Reservados</p>
+        </footer>
+
+        <!-- ------------------ SCRIPTS ------------------ -->
         <script src="./apiScript.js" type="module"></script>
     </body>
 </html>
