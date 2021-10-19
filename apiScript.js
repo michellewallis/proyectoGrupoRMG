@@ -134,7 +134,7 @@ document.getElementById('randomColor').addEventListener('click', () => {
 //Busqueda de prendas style+color
 
 document.getElementById('search').addEventListener('click', () => {
-    if (arrStyle[0] == undefined) {
+    if (arrBusqueda[0] == undefined) {
         return alert('Debes elegir un color para la búsqueda detallada');
     }
     let tresRandom = [];
